@@ -6,13 +6,15 @@ import { ProgressBar } from '@/components/ProgressBar';
 interface VideoStatistics {
   video_id: string;
   title: string;
-  views: number;
+  view_count: number;
   likes: number;
   comments: number;
   published_at: string;
   upload_date: string;
   channel_name: string;
+  channel_id: string;
   url: string;
+  duration: string;
 }
 
 interface ScrapingProgress {
@@ -136,6 +138,8 @@ export default function Home() {
     ? jobStatus.progress.completed / jobStatus.progress.total 
     : 0;
 
+  console.log('videos:', results?.videos);
+
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-2xl font-bold mb-4">YouTube Video Statistics Scraper</h1>
@@ -198,10 +202,11 @@ export default function Home() {
               <tr className="bg-gray-100">
                 <th className="border p-2">Video ID</th>
                 <th className="border p-2">Title</th>
+                <th className="border p-2">Duration(s)</th>
                 <th className="border p-2">Views</th>
                 <th className="border p-2">Likes</th>
                 <th className="border p-2">Comments</th>
-                <th className="border p-2">Upload Date</th>
+                <th className="border p-2">Published</th>
                 <th className="border p-2">Channel</th>
               </tr>
             </thead>
@@ -210,11 +215,12 @@ export default function Home() {
                 <tr key={video.video_id}>
                   <td className="border p-2">{video.video_id}</td>
                   <td className="border p-2">{video.title}</td>
-                  <td className="border p-2">{video.views?.toLocaleString() || '0'}</td>
+                  <td className="border p-2">{video.duration}</td>
+                  <td className="border p-2">{video.view_count?.toLocaleString() || '0'}</td>
                   <td className="border p-2">{video.likes?.toLocaleString() || '0'}</td>
                   <td className="border p-2">{video.comments?.toLocaleString() || ''}</td>
                   <td className="border p-2">{video.published_at}</td>
-                  <td className="border p-2">{video.channel_name}</td>
+                  <td className="border p-2">{video.channel_name} (@{video.channel_id})</td>
                 </tr>
               ))}
             </tbody>

@@ -98,7 +98,7 @@ async function handleRequest(request, method, pathSegments) {
   } catch (error) {
     console.error('API route error:', error);
     return NextResponse.json(
-      { error: 'Failed to proxy request to external API', message: error.message },
+      { error: `Failed to proxy request to external API: ${process.env.EXTERNAL_API_URL}`, message: error.message },
       { status: 500 }
     );
   }
