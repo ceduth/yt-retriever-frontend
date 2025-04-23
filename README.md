@@ -35,13 +35,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ### Test locally
 
 ```shell
-docker build . -t harbor.example.com/project-name/nextjs-app:latest \
-  --build-arg NEXT_PUBLIC_API_URL=https://api.example.com
+docker build . -t harbor.example.com/project-name/yt-retriever-frontend:latest \
+  --build-arg EXTERNAL_API_URL=http://localhost:8000 
 ```
 
 ```shell
 docker run -p 3000:3000 \
-    -e NEXT_PUBLIC_API_URL=https://api.example.com \
+    -e EXTERNAL_API_URL=http://localhost:8000  \
     yt-retriever-frontend
 ```
 
@@ -56,6 +56,7 @@ Open http://localhost:8000
 gh secret set HARBOR_USERNAME --body "your-username"
 gh secret set HARBOR_PASSWORD --body "your-password-value"
 
+gh variable set EXTERNAL_API_URL --body "yt-retriever:80"
 gh variable set NEXT_PUBLIC_API_URL --body "yt-retriever:80"
 gh variable set HARBOR_REGISTRY --body "registry.ceduth.dev"
 gh variable set HARBOR_PROJECT --body "jfp"
