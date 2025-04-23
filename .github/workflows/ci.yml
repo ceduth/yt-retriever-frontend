@@ -39,8 +39,6 @@ jobs:
           context: .
           push: true
           tags: ${{ vars.HARBOR_REGISTRY }}/${{ vars.HARBOR_PROJECT }}/yt-retriever-frontend:latest
-          cache-from: type=registry,ref=${{ vars.HARBOR_REGISTRY }}/${{ vars.HARBOR_PROJECT }}/yt-retriever-frontend:buildcache
-          cache-to: type=registry,ref=${{ vars.HARBOR_REGISTRY }}/${{ vars.HARBOR_PROJECT }}/yt-retriever-frontend:buildcache,mode=max
           build-args: |
                 NODE_ENV=production
                 NEXT_PUBLIC_API_URL=${{ vars.NEXT_PUBLIC_API_URL }}

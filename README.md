@@ -56,8 +56,8 @@ Open http://localhost:8000
 gh secret set HARBOR_USERNAME --body "your-username"
 gh secret set HARBOR_PASSWORD --body "your-password-value"
 
-gh variable set EXTERNAL_API_URL --body "yt-retriever:80"
-gh variable set NEXT_PUBLIC_API_URL --body "yt-retriever:80"
+gh variable set EXTERNAL_API_URL --body "http://yt-retriever:80"
+gh variable set NEXT_PUBLIC_API_URL --body "http://yt-retriever:80"
 gh variable set HARBOR_REGISTRY --body "registry.ceduth.dev"
 gh variable set HARBOR_PROJECT --body "jfp"
 ```
