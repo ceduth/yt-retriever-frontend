@@ -34,6 +34,13 @@ interface Results {
   status?: 'running'|'completed'|'failed';
 }
 
+
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+if (!apiUrl) {
+  throw new Error('NEXT_PUBLIC_API_URL is not defined');
+}
+
+
 export default function Home() {
   const [videoIds, setVideoIds] = useState('');
   const [jobId, setJobId] = useState<string | null>(null);
@@ -45,12 +52,12 @@ export default function Home() {
 
     if (jobId && jobStatus?.status !== 'completed' && jobStatus?.status !== 'failed') {
       intervalId = setInterval(async () => {
-        const response = await fetch(`http://localhost:8000/status/${jobId}`);
+        const response = await fetch(`${apiUrl}/status/${jobId}`);
         const status = await response.json();
         setJobStatus(status);
 
         if (status.status === 'completed') {
-          const resultsResponse = await fetch(`http://localhost:8000/results/${jobId}`);
+          const resultsResponse = await fetch(`${apiUrl}/results/${jobId}`);
           const { results } = await resultsResponse.json();
           setResults(results);
           clearInterval(intervalId);
@@ -83,7 +90,7 @@ export default function Home() {
     }
 
     try {
-      const response = await fetch('http://localhost:8000/scrape', {
+      const response = await fetch(`${apiUrl}/scrape`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
