@@ -52,6 +52,21 @@ export default function HomePage() {
             Coming Soon
           </button>
         </div>
+
+        <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow opacity-50">
+          <h2 className="text-2xl font-bold mb-2">Comment Analyzer</h2>
+          <p className="text-gray-600 mb-4">
+            Coming soon: Extract, analyze and visualize YouTube video comments: 
+            track sentiment, identify key topics, and discover audience trends.
+          </p>
+          <button 
+            disabled
+            className="bg-gray-400 text-white px-4 py-2 rounded cursor-not-allowed"
+          >
+            Coming Soon
+          </button>
+        </div>
+
       </div>
     </div>
   )

@@ -74,3 +74,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 * Add the menu to the side of each page
 * Persist jobs to storage
+* List jobs history
+* Channel Analytics: Analyze YouTube channels for subscriber growth, content patterns and more.
+* Comment Analyzer: Extract, analyze and visualize YouTube video comments: track sentiment, identify key topics, and discover audience trends.
+
+
+## FIXME
+
+* No sidebar link for the API Explorer on the Scraper Page
