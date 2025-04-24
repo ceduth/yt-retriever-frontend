@@ -35,7 +35,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ### Test locally
 
 ```shell
-docker build . -t harbor.example.com/project-name/yt-retriever-frontend:latest \
+docker build . -t harbor.ceduth.dev/project-name/yt-retriever-frontend:latest \
   --build-arg EXTERNAL_API_URL=http://localhost:8000 
 ```
 
@@ -68,3 +68,9 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+
+## TODO
+
+
+* Add the menu to the side of each page
+* Persist jobs to storage
