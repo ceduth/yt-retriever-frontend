@@ -1,4 +1,7 @@
-Simple self-service frontend for [yt-retriever](https://github.com/ceduth/yt-retriever).
+# ytdt-web
+
+Simple self-service frontend for [YouTube Data Tools API](https://github.com/ceduth/ytdt-api).
+Check it in action at [ytdt.ceduth.dev](ytdt.ceduth.dev)
 
 ![](assets/screenshot-1.png?raw=true)
 
@@ -32,17 +35,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ## Deploy
 
 
-### Test locally
+### Deploy locally
 
 ```shell
-docker build . -t harbor.ceduth.dev/project-name/yt-retriever-frontend:latest \
+docker build . -t harbor.ceduth.dev/project-name/ytdt-web:latest \
   --build-arg EXTERNAL_API_URL=http://localhost:8000 
 ```
 
 ```shell
 docker run -p 3000:3000 \
     -e EXTERNAL_API_URL=http://localhost:8000  \
-    yt-retriever-frontend
+    ytdt-web
 ```
 
 Open http://localhost:8000 
@@ -56,8 +59,8 @@ Open http://localhost:8000
 gh secret set HARBOR_USERNAME --body "your-username"
 gh secret set HARBOR_PASSWORD --body "your-password-value"
 
-gh variable set EXTERNAL_API_URL --body "http://yt-retriever:80"
-gh variable set NEXT_PUBLIC_API_URL --body "http://yt-retriever:80"
+gh variable set EXTERNAL_API_URL --body "http://ytdt-api:80"
+gh variable set NEXT_PUBLIC_API_URL --body "http://ytdt-api:80"
 gh variable set HARBOR_REGISTRY --body "registry.ceduth.dev"
 gh variable set HARBOR_PROJECT --body "jfp"
 ```
