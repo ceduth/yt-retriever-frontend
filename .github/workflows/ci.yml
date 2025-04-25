@@ -38,7 +38,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ vars.HARBOR_REGISTRY }}/${{ vars.HARBOR_PROJECT }}/yt-retriever-frontend:latest
+          tags: ${{ vars.HARBOR_REGISTRY }}/${{ vars.HARBOR_PROJECT }}/ytdt-web:latest
           build-args: |
                 NODE_ENV=production
                 NEXT_PUBLIC_API_URL=${{ vars.NEXT_PUBLIC_API_URL }}
