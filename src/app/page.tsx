@@ -9,7 +9,7 @@ export default function HomePage() {
       <header className="mb-12 text-center">
         <h1 className="text-4xl font-bold mb-4">YouTube Data Tools</h1>
         <p className="text-xl text-gray-600">
-          Collection of tools for scraping and analyzing YouTube data
+        ML experimentation toolkit for YouTube data. Easily extract YouTube data, gather video statistics, explore API data, and gain novel audience insights.
         </p>
       </header>
 

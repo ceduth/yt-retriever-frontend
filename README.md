@@ -1,7 +1,10 @@
 # ytdt-web
 
-Simple self-service frontend for [YouTube Data Tools API](https://github.com/ceduth/ytdt-api).
-Check it in action at [ytdt.ceduth.dev](ytdt.ceduth.dev)
+Simple self-service frontend for the [YouTube Data Tools API](https://github.com/ceduth/ytdt-api).
+Check it in action at [ytdt.ceduth.dev](ytdt.ceduth.dev).
+
+**YouTube Data Tools**: ML experimentation toolkit for YouTube data. Easily extract YouTube data, gather video statistics, explore API data, and gain novel audience insights.
+
 
 ![](assets/screenshot-1.png?raw=true)
 
