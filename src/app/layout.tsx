@@ -1,7 +1,7 @@
-// app/layout.tsx
 import './globals.css'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from '@/components/Footer';
 
@@ -32,6 +32,30 @@ export const metadata: Metadata = {
     siteName: 'YouTube Data Tools',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/logo-og.png', // Place your Open Graph image here
+        width: 1200,
+        height: 630,
+        alt: 'YouTube Data Tools'
+      }
+    ],
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png' },
+    ],
+    other: [
+      {
+        rel: 'manifest',
+        url: '/site.webmanifest',
+      },
+    ],
   },
 };
 
@@ -44,6 +68,22 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
       <body className={`flex flex-col min-h-screen bg-gray-50 font-sans ${geist.className}`}>
+
+      <header className="bg-white border-b border-gray-200 py-3">
+          <div className="container mx-auto px-6">
+            <Link href="/" className="flex items-center">
+              <Image 
+                src="/logo.svg"
+                alt="YouTube Data Tools"
+                width={40}
+                height={40}
+                className="mr-3"
+              />
+              <span className="text-xl font-bold text-gray-800">YouTube Data Tools</span>
+            </Link>
+          </div>
+        </header>
+
         <main className="flex-1">
           {children}
         </main>
